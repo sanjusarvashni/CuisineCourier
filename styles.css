@@ -1,0 +1,227 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #ffffff;
+}
+.header-container{
+    
+    box-shadow: 1px 1px 10px gray;
+     display: flex;
+     align-items: center;
+    justify-content: space-between;
+   
+   
+
+    
+}
+.nav-contents{
+    display: flex;
+    gap: 2rem;
+}
+.header-container>.nav-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    margin-right: 3rem;
+}
+.nav-contents>h2{
+    font-weight: bolder;
+    color: rgb(180, 3, 3);
+}
+.nav-contents>h2:hover{
+    color: black;
+    cursor: pointer;
+}
+.header-container> .logo> img{
+    height: 100px;
+}
+.header-container>.logo{
+    display: flex;
+    align-items: center;
+
+}
+.header-container> .logo>h2{
+    font-size: 2.4rem;
+    color: rgb(180, 3, 3);
+    font-weight: bolder;
+}
+.whats-on-your-mind-card{
+    width: 100%;
+    
+}
+.whats-on-your-mind-card>img{
+   width: 160px;
+}
+.whats-on-your-mind-container{
+    padding: auto;
+    border-bottom: solid 1px #a7a3a3;
+    /* border: solid 1px black; */
+    margin: auto;
+    margin-top: 3rem;
+    width: 80%;
+    color:rgb(180, 3, 3);
+    
+    
+}
+.body-container{
+    border: solid 1px rgb(12, 12, 12);
+    height: auto;
+    padding: 1rem;
+    width: 80%;
+    margin: 0 auto;
+    
+}
+.waym-cards{
+    display: flex;
+    overflow-x: auto;
+   
+    /* width: 40%;
+    margin:0 auto; */
+}
+.waym-cards::-webkit-scrollbar{
+    display: none;
+}
+.waym-cards:hover{
+    cursor: pointer;
+}
+/* .res-card>img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 2rem;
+  
+
+}
+.res-card{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    /* box-shadow: 1px 1px 5px rgb(180, 3, 3); */
+    /* border: none;
+    padding-bottom: 1rem;
+    border-radius: 2rem;
+    
+   
+}
+.res-detail{
+    padding: 1rem;
+    font-weight: 400;
+    line-height: 22px;
+    font-size: 1.1rem;
+
+}
+.res-detail>.Area{
+    color: #706e6e;
+    font-weight: 600;
+   
+}
+.res-detail>h2{
+    color:rgb(180, 3, 3) ;
+
+}
+
+.res-card:hover{
+    cursor: pointer;
+}
+.restaurant-container{
+   
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+    padding: 1rem;
+    width: 80%;
+    margin: auto;
+    margin-top: 4rem; */
+/* }  */
+/* Shimmer.css */
+/* RestaurantCard.css */
+
+.res-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+    width: 300px;
+  }
+  
+  .res-card img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    /* height: auto; */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .res-detail {
+    padding: 10px;
+  }
+  
+  .restaurant-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .rating-and-delivery-time {
+    font-size: 1.2rem;
+    color: #666666;
+  }
+  
+  .cuisines {
+    font-size: 1rem;
+    color: #333333;
+  }
+  
+  .Area {
+    font-size: 1rem;
+    color: #333333;
+  }
+/* Restaurants.css */
+
+.restaurant-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  
+
+
+.shimmer-wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .shimmer {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% auto;
+    animation: shimmerAnimation 1.5s infinite linear;
+  }
+  
+  @keyframes shimmerAnimation {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
