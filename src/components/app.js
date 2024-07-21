@@ -8,14 +8,20 @@ import WhatsOnYourMind from "./WhatsOnYourMind";
 
 
 const AppLayout = ( )=>{
+    
+
+ 
+  
     return (<div className="app-layout">
-         <Header/>
+         <Header />
          <WhatsOnYourMind/>
-         <Restaurants />
+         <Restaurants  />
         
     </div>
     );
 }
+
+export default AppLayout;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<AppLayout/>)

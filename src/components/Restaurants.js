@@ -10,7 +10,7 @@ const RestaurantCard = ({resList,loading}) => {
          {loading ? (
         <Shimmer /> // Display shimmer effect while loading
       ) : (
-        <>
+        <div className="rescard">
             <img src={imageUrl}></img>
             <div className="res-detail">
             <h2 className="restaurant-name">{name}</h2>
@@ -18,17 +18,19 @@ const RestaurantCard = ({resList,loading}) => {
              <p className="cuisines">{cuisines.join(",")}</p>
              <p className="Area">{locality}</p>
             </div>
-        </> )} 
+        </div> )} 
         </div>
        
     )
     }
 
 
-  const Restaurants =( )=>{
+  const Restaurants =()=>{
     const [restaurantData, setRestaurantData] = useState([]);
     const [loading, setLoading] = useState(true); // Add loading state
     const [error, setError] = useState(null); // Add error state
+    const [searchText, setsearchText] = useState("");
+    const [filteredRestaurant, setFilteredRestaurant] = useState([]);
     
     useEffect(() => {
         fetchData();
@@ -51,8 +53,10 @@ const RestaurantCard = ({resList,loading}) => {
                 ?.restaurants || [];
               resInfo = [...resInfo, ...restaurants];
             });
+          
          
           setRestaurantData(resInfo || []);
+          setFilteredRestaurant(resInfo || []);
           setLoading(false); // Update loading state once data is fetched
         } catch (error) {
           console.error("Error fetching data:", error);
@@ -63,13 +67,44 @@ const RestaurantCard = ({resList,loading}) => {
     if (error) {
         return <p>Error: {error}</p>; // Render error message if fetch fails
       }
-    return (
+    
+      return (
         <div className="restaurant-container">
-        {restaurantData.map((res) => (
-          <RestaurantCard key={res.info.id} resList={res.info} loading={loading} />
-        ))}
-      </div>
-    );
-}
+          <div className="search-container"><input
+            type="text"
+            placeholder="Search restaurants..."
+            className="search" value={searchText} onChange={(e) =>{
+              setsearchText(e.target.value)
+            }}
+          />
+            <button className="search-btn" onClick={()=>{
+             
+               const filteredRestaurant = restaurantData.filter((res) => {
+            return res.info.name.toLowerCase().includes(searchText.toLowerCase());
+              });
+        setFilteredRestaurant(filteredRestaurant)
+            }} >Search</button>
 
-export default Restaurants;
+            <button className="search-btn" onClick={()=>{
+              const toprated=restaurantData.filter((res)=>{
+                return res.info.avgRating > 4.5;
+              })
+              setFilteredRestaurant(toprated)
+            }}>See Top rated Restaurants</button>
+
+            <button className="search-btn" onClick={()=>{
+              setFilteredRestaurant(restaurantData)
+            }}>See All Restaurants</button>
+          </div>
+          
+    
+          <div className="rescard-container">
+            {filteredRestaurant.map((res) => (
+              <RestaurantCard key={res.info.id} resList={res.info} loading={loading} />
+            ))}
+          </div>
+        </div>
+      );
+    };
+
+    export default Restaurants;

@@ -5,6 +5,7 @@
 }
 body{
     background-color: #ffffff;
+    width: 100vw;
 }
 .header-container{
     
@@ -12,7 +13,8 @@ body{
      display: flex;
      align-items: center;
     justify-content: space-between;
-   
+ 
+   width: 100%;
    
 
     
@@ -61,7 +63,7 @@ body{
     border-bottom: solid 1px #a7a3a3;
     /* border: solid 1px black; */
     margin: auto;
-    margin-top: 3rem;
+    margin-top: 2rem;
     width: 80%;
     color:rgb(180, 3, 3);
     
@@ -187,15 +189,47 @@ body{
   }
 /* Restaurants.css */
 
-.restaurant-container {
+.rescard-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     padding: 20px;
   }
+ .res-card:hover{
+  box-shadow: 1px 1px 10px rgb(80, 78, 78);
+ }
+
+ .search-btn{
+  padding: 1rem;
+  background-color: rgb(180, 3, 3);
+ color: #ffffff;
+ font-weight: 500;
+ border:  solid 2px rgb(180, 3, 3);
+ }
+ .search-container{
+  display: flex;
+  gap: 2rem;
+  padding-left: 9rem;
+  justify-content: flex-start;
+ }
+
   
-  
+  .restaurant-container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 2rem;
+    
+
+  }
+  .restaurant-container > input{
+    width: 200px;
+    margin-left: 140px;
+   
+    border:none;
+    box-shadow: 1px 1px 10px gray;
+  }
 
 
 .shimmer-wrapper {
@@ -224,4 +258,11 @@ body{
       background-position: 200% 0;
     }
   }
+  .search{
+    padding: 1rem;
+    box-shadow: 1px 1px 10px gray;
+    border: none;
+    width:360px;
+  }
+
   
